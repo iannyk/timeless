@@ -25,7 +25,7 @@ export default function Memories() {
         {memories.map((m, i) => (
           <div key={m.id} className={`polaroid polaroid--${i % 2 === 0 ? 'left' : 'right'}`}>
             <div className="polaroid-photo">
-              <img src={`/src/assets/${m.file}`} alt={m.caption} />
+              <img src={`/${m.file}`} alt={m.caption} />
             </div>
             <p className="polaroid-caption">{m.caption}</p>
             <p className="polaroid-date">{m.date}</p>
