@@ -1,21 +1,34 @@
 import { useState, useEffect } from 'react'
 import '@fontsource/dancing-script'
 import './Diary.css'
+import { supabase } from '../lib/supabase'
 
 const STORAGE_PIN = 'timeless_pin'
-const STORAGE_ENTRIES = 'timeless_entries'
-
 const moods = ['😊','😌','😢','😰','🙏']
 
 export default function Diary() {
   const [pin, setPin] = useState(() => localStorage.getItem(STORAGE_PIN) || '')
   const [input, setInput] = useState('')
   const [unlocked, setUnlocked] = useState(false)
-  const [creating, setCreating] = useState(false)
-  const [entries, setEntries] = useState(() => JSON.parse(localStorage.getItem(STORAGE_ENTRIES) || '[]'))
+  const [entries, setEntries] = useState([])
   const [view, setView] = useState('list')
   const [current, setCurrent] = useState({ text: '', mood: '😊' })
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (unlocked) fetchEntries()
+  }, [unlocked])
+
+  async function fetchEntries() {
+    setLoading(true)
+    const { data } = await supabase
+      .from('entries')
+      .select('*')
+      .order('id', { ascending: false })
+    if (data) setEntries(data)
+    setLoading(false)
+  }
 
   function handlePinSubmit(digit) {
     const next = input + digit
@@ -34,25 +47,22 @@ export default function Diary() {
     }
   }
 
-  function saveEntry() {
+  async function saveEntry() {
     if (!current.text.trim()) return
     const entry = {
-      id: Date.now(),
       text: current.text,
       mood: current.mood,
       date: new Date().toLocaleDateString('pt-BR'),
     }
-    const updated = [entry, ...entries]
-    setEntries(updated)
-    localStorage.setItem(STORAGE_ENTRIES, JSON.stringify(updated))
+    const { data } = await supabase.from('entries').insert([entry]).select()
+    if (data) setEntries(e => [data[0], ...e])
     setCurrent({ text: '', mood: '😊' })
     setView('list')
   }
 
-  function deleteEntry(id) {
-    const updated = entries.filter(e => e.id !== id)
-    setEntries(updated)
-    localStorage.setItem(STORAGE_ENTRIES, JSON.stringify(updated))
+  async function deleteEntry(id) {
+    await supabase.from('entries').delete().eq('id', id)
+    setEntries(e => e.filter(x => x.id !== id))
   }
 
   if (!unlocked) return (
@@ -118,7 +128,8 @@ export default function Diary() {
       </div>
       <button className="diary-new-btn" onClick={() => setView('new')}>+ Nova entrada</button>
       <div className="diary-entries">
-        {entries.length === 0 && (
+        {loading && <p className="diary-empty">Carregando... 💜</p>}
+        {!loading && entries.length === 0 && (
           <p className="diary-empty">Nenhuma entrada ainda. Escreve o que sentir. 💜</p>
         )}
         {entries.map(e => (
