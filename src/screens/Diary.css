@@ -1,0 +1,234 @@
+.diary-container {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a0010 0%, #2d0035 50%, #1a0a0f 100%);
+  padding: 40px 24px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.diary-lock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.diary-lock-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  color: #C41E3A;
+}
+
+.diary-lock-sub {
+  font-size: 13px;
+  color: rgba(245,208,224,0.4);
+  letter-spacing: 1px;
+}
+
+.diary-dots {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.diary-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(196,30,58,0.6);
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.diary-dot--filled {
+  background: #C41E3A;
+}
+
+.diary-error {
+  font-size: 13px;
+  color: #C41E3A;
+  letter-spacing: 1px;
+}
+
+.diary-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.diary-key {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(106,13,173,0.4);
+  color: #f5d0e0;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.diary-key:focus { outline: none; }
+.diary-key:active { background: rgba(196,30,58,0.2); }
+.diary-key--empty { background: transparent; border: none; cursor: default; }
+
+.diary-back {
+  background: none;
+  border: none;
+  color: rgba(245,208,224,0.6);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.diary-back:focus { outline: none; }
+
+.diary-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 34px;
+  color: #C41E3A;
+  margin-bottom: 16px;
+}
+
+.diary-pinned {
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid #6A0DAD;
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.diary-pinned-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 17px;
+  color: #f5d0e0;
+  line-height: 1.4;
+}
+
+.diary-new-btn {
+  background: #C41E3A;
+  border: none;
+  border-radius: 16px;
+  padding: 14px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.diary-new-btn:focus { outline: none; }
+
+.diary-mood-label {
+  font-size: 13px;
+  color: rgba(245,208,224,0.5);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.diary-moods {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.diary-mood-btn {
+  font-size: 28px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(106,13,173,0.3);
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.diary-mood-btn:focus { outline: none; }
+.diary-mood-btn--active { border-color: #C41E3A; }
+
+.diary-textarea {
+  width: 100%;
+  min-height: 200px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(106,13,173,0.4);
+  border-radius: 16px;
+  padding: 16px;
+  color: #f5d0e0;
+  font-size: 15px;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  resize: none;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.diary-textarea:focus { outline: none; border-color: #C41E3A; }
+
+.diary-save-btn {
+  background: #C41E3A;
+  border: none;
+  border-radius: 16px;
+  padding: 14px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.diary-save-btn:focus { outline: none; }
+
+.diary-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.diary-empty {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: rgba(245,208,224,0.3);
+  font-style: italic;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.diary-entry {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(106,13,173,0.3);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.diary-entry-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.diary-entry-mood { font-size: 20px; }
+
+.diary-entry-date {
+  font-size: 11px;
+  color: rgba(245,208,224,0.3);
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.diary-entry-delete {
+  background: none;
+  border: none;
+  color: rgba(245,208,224,0.2);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.diary-entry-delete:focus { outline: none; }
+
+.diary-entry-text {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: #f5d0e0;
+  line-height: 1.6;
+}

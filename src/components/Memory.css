@@ -1,0 +1,147 @@
+.memory-container {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a0010 0%, #2d0035 50%, #1a0a0f 100%);
+  padding: 24px 16px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.memory-back {
+  background: none;
+  border: none;
+  color: rgba(245, 208, 224, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.memory-back:focus { outline: none; }
+
+.memory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.memory-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  color: #C41E3A;
+}
+
+.memory-moves {
+  font-size: 13px;
+  color: rgba(245, 208, 224, 0.5);
+  letter-spacing: 1px;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.memory-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s;
+}
+
+.memory-card--flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-back,
+.memory-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-card-back {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(106, 13, 173, 0.4);
+  font-size: 28px;
+}
+
+.memory-card-front {
+  transform: rotateY(180deg);
+  background: #222;
+}
+
+.memory-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memory-card--matched .memory-card-front {
+  border: 2px solid #C41E3A;
+  box-shadow: 0 0 12px rgba(196, 30, 58, 0.4);
+}
+
+.memory-result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.memory-result-emoji { font-size: 64px; }
+
+.memory-result-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  color: #f5d0e0;
+}
+
+.memory-result-moves {
+  font-size: 16px;
+  color: #C41E3A;
+  letter-spacing: 1px;
+}
+
+.memory-btn-restart {
+  background: #C41E3A;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 32px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.memory-btn-restart:focus { outline: none; }
+
+.memory-btn-back {
+  background: none;
+  border: 1px solid rgba(106, 13, 173, 0.4);
+  border-radius: 16px;
+  padding: 14px 32px;
+  color: rgba(245, 208, 224, 0.6);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.memory-btn-back:focus { outline: none; }

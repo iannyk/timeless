@@ -1,0 +1,182 @@
+.snake-container {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a0010 0%, #2d0035 50%, #1a0a0f 100%);
+  padding: 24px 16px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.snake-back {
+  background: none;
+  border: none;
+  color: rgba(245, 208, 224, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.snake-back:focus { outline: none; }
+
+.snake-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.snake-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  color: #C41E3A;
+}
+
+.snake-score {
+  font-size: 14px;
+  color: #f5d0e0;
+  letter-spacing: 1px;
+}
+
+.snake-hint {
+  font-size: 11px;
+  color: rgba(245,208,224,0.4);
+  margin-bottom: 12px;
+  height: 16px;
+}
+
+.snake-board {
+  display: grid;
+  grid-template-columns: repeat(20, 16px);
+  grid-template-rows: repeat(20, 16px);
+  border: 1px solid rgba(106,13,173,0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.snake-cell {
+  width: 16px;
+  height: 16px;
+  background: rgba(255,255,255,0.02);
+}
+
+.snake-head {
+  background: #C41E3A;
+  border-radius: 3px;
+}
+
+.snake-body {
+  background: #8B0000;
+  border-radius: 2px;
+}
+
+.snake-food {
+  background: #f5d0e0;
+  border-radius: 50%;
+  transform: scale(0.7);
+}
+
+.snake-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.snake-controls-row {
+  display: flex;
+  gap: 8px;
+}
+
+.snake-ctrl {
+  width: 52px;
+  height: 52px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(106,13,173,0.4);
+  border-radius: 12px;
+  color: #f5d0e0;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.snake-ctrl:focus { outline: none; }
+.snake-ctrl:active { background: rgba(196,30,58,0.3); }
+
+.snake-result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.snake-ianny {
+  width: 100px;
+  height: 150px;
+}
+
+.snake-ianny svg {
+  width: 100%;
+  height: 100%;
+}
+
+.snake-won-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  color: #f5d0e0;
+}
+
+.snake-won-msg {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  color: #C41E3A;
+}
+
+.snake-won-score {
+  font-size: 13px;
+  color: rgba(245,208,224,0.4);
+  letter-spacing: 1px;
+}
+
+.snake-btn-restart {
+  background: #C41E3A;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 32px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.snake-btn-restart:focus { outline: none; }
+
+.snake-btn-back {
+  background: none;
+  border: 1px solid rgba(106,13,173,0.4);
+  border-radius: 16px;
+  padding: 14px 32px;
+  color: rgba(245,208,224,0.6);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.snake-btn-back:focus { outline: none; }
+.snake-food-pixel {
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.snake-food-pixel svg {
+  width: 40px;
+  height: 60px;
+  margin-top: -4px;
+  margin-left: -4px;
+  image-rendering: pixelated;
+}

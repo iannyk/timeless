@@ -1,0 +1,40 @@
+.splash-container {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a0010 0%, #2d0035 50%, #1a0a0f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  animation: splash-fade 0.6s ease;
+}
+
+@keyframes splash-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.splash-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 64px;
+  color: #C41E3A;
+  text-shadow: 0 0 40px rgba(196, 30, 58, 0.5);
+  animation: splash-grow 1.2s ease forwards;
+}
+
+@keyframes splash-grow {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.splash-quote {
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  color: rgba(245, 208, 224, 0.6);
+  animation: splash-up 1.5s ease forwards;
+}
+
+@keyframes splash-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

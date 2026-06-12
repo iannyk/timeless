@@ -1,0 +1,145 @@
+.spinner-container {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a0010 0%, #2d0035 50%, #1a0a0f 100%);
+  padding: 24px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner-back {
+  background: none;
+  border: none;
+  color: rgba(245, 208, 224, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.spinner-back:focus { outline: none; }
+
+.spinner-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.spinner-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  color: #C41E3A;
+  margin-bottom: 4px;
+}
+
+.spinner-sub {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: #fff;
+  font-style: italic;
+}
+
+.spinner-wheel-wrap {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin-bottom: 32px;
+}
+
+.spinner-wheel {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 3px solid rgba(196,30,58,0.6);
+  box-shadow: 0 0 30px rgba(106,13,173,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.spinner-slice {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+  background: rgba(255,255,255,0.1);
+}
+
+.spinner-slice-color {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: -65px;
+  left: 0;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.spinner-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: #1a0010;
+  border-radius: 50%;
+  border: 2px solid rgba(196,30,58,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  z-index: 2;
+}
+
+.spinner-arrow {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #C41E3A;
+}
+
+.spinner-btn {
+  background: #C41E3A;
+  border: none;
+  border-radius: 20px;
+  padding: 16px 48px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.spinner-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.spinner-btn:focus { outline: none; }
+
+.spinner-result {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(106,13,173,0.4);
+  border-radius: 20px;
+  padding: 20px 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.spinner-result-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(245,208,224,0.4);
+  margin-bottom: 8px;
+}
+
+.spinner-result-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  color: #f5d0e0;
+  line-height: 1.4;
+}

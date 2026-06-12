@@ -1,0 +1,74 @@
+.games-container {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a0010 0%, #2d0035 50%, #1a0a0f 100%);
+  padding-bottom: 100px;
+}
+
+.games-header {
+  padding: 40px 24px 16px;
+  text-align: center;
+}
+
+.games-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 34px;
+  color: #C41E3A;
+  margin-bottom: 4px;
+}
+
+.games-sub {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: #ffffff;
+  font-style: italic;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(106, 13, 173, 0.4);
+  border-radius: 20px;
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.game-card:focus {
+  outline: none;
+}
+
+.game-card:active {
+  transform: scale(0.96);
+}
+
+.game-card--soon {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.game-icon {
+  font-size: 36px;
+}
+
+.game-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 16px;
+  color: #f5d0e0;
+  text-align: center;
+}
+
+.game-desc {
+  font-size: 11px;
+  color: rgba(245, 208, 224, 0.5);
+  text-align: center;
+}
