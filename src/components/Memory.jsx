@@ -86,7 +86,7 @@ export default function Memory({ onBack }) {
             <div className="memory-card-inner">
               <div className="memory-card-back">❤️</div>
               <div className="memory-card-front">
-                <img src={`/src/assets/${card.file}`} alt="" />
+                <img src={`/${card.file}`} alt="" />
               </div>
             </div>
           </div>
